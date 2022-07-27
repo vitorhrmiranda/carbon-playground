@@ -1,0 +1,10 @@
+version: '3.7'
+
+services:
+  carbon:
+    image: carbon:dev
+    container_name: carbon
+    build: .
+    volumes:
+      - ./main.carbon:/src/main.carbon:ro
+    command: bazel run //explorer -- /src/main.carbon
